@@ -19,3 +19,10 @@
 // ### Wireframe
 
 // ![Wireframe](salary-calc-wireframe.png)
+
+$ (readyNow);
+function readyNow(){
+  console.log('JQ');
+//   $( '#bonusButton') .on('click', bonusCalc)
+//   $()
+}
