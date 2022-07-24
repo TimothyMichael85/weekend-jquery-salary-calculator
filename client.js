@@ -35,7 +35,7 @@ function submit() {
     let ID = $('#userId').val();
     let job = $('#jobTitle').val();
     let salary = $('#annualSalary').val();
-    //console.log(typeof(salary))
+    console.log(typeof(salary))
     total += Math.round(Number(salary / 12) * 100) / 100;
     console.log(total)
 
@@ -68,7 +68,7 @@ function submit() {
         $('#alert').empty()
         $('#alert').append('Error 9000: Im sorry, Dave. Im afraid I cant do that. A text box was left empty')
     }
-} 
+}
 // Create a delete button that removes an employee from the DOM. For Base mode, it does **not** need to remove that Employee's salary from the reported total.
 function deleteBtn() {
     $(this).closest('tr').remove();

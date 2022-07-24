@@ -27,19 +27,20 @@ If the total monthly cost exceeds $20,000, add a red background color to the tot
     </header>
     <main>
         <!-- The application should have an input form that collects _employee first name, last name, ID number, job title, annual salary_. -->
-        <h3>add employees below: </h3>
+        <h3>Add employees below: </h3>
         <p id="alert"></p>
         <div id="inputs">
             <input id="firstName" type="text" placeholder="First Name">
             <input id="lastName" type="text" placeholder="Last Name">
             <input id="userId" type="number" placeholder="User ID">
             <input id="jobTitle" type="text" placeholder="Job Title">
-            <input id="annualSalary" placeholder="Annual Salary">
+            <input id="annualSalary" type="number" placeholder="Annual Salary">
             
             <!-- A 'Submit' button should collect the form information, store the information to calculate monthly costs, append information to the DOM and clear the input fields. Using the stored information, calculate monthly costs and append this to the to DOM.     -->
             <button id="submitBtn">submit</button>
         </div>
         <div>
+            <h3>Employees:</h3> 
             <table>
                 <thead>
                     <tr>
