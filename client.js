@@ -25,12 +25,16 @@ function handleReady(){
     console.log('document ready!');
     //DOM = document Object Model
     //the dom is ready! We can interact with it
-    let employees = [];
-  
+    
     //click handler
     //%('exists_now).on('click',exists_later, handleClickFn)
     $('#submitBtn').on('click', addEmployee);
     //$(document).on('click', '#removeBtn', removeEmployee);
+}
+
+  
+let submitBtn = $('#submitBtn')
+let employees = [];
 
 function addEmployee() {
 
@@ -40,18 +44,16 @@ function addEmployee() {
     let jobTitle = $('#jobTitle').val();
     let annualSalary = Math.round($('#annualSalary').val());
 
+    //create employee object => grabbing the values from inputs
     let newEmployee = {
         firstName: firstName,
         lastName: lastName,
         employeeId: employeeId,
         jobTitle: jobTitle,
         annualSalary: annualSalary
-        }
-
-    {employees.push(newEmployee);
-        console.log(employees);
     }
-    console.log(employees);
-}
+        //push employee object to employees array => adding employee to table
+        employees.push(newEmployee);
+        console.log(employees);
 
 }
