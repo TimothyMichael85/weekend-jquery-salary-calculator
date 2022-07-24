@@ -17,24 +17,19 @@
 // No files have been provided (just instructions.md and a readme.md). Instead of forking and cloning this repo, please choose "Use This Template" (green button) and name your new repo "weekend-jquery-salary-calculator" and clone down from there. Make sure to commit regularily!
 
 
-console.log('client.js loaded')
+$(readyNow)
 
-$(document).ready(handleReady);
+function readyNow() {
+    console.log('doc is ready')
+    $('#submitBtn').on('click', submit);
 
-function handleReady(){
-    console.log('document ready!');
-    //DOM = document Object Model
-    //the dom is ready! We can interact with it
+
+    $('#container').on('click', '.delete', deleteBtn)
+    $('#submitBtn').on('click',submit);
     
-    //click handler
-    //%('exists_now).on('click',exists_later, handleClickFn)
-    $('#submitBtn').on('click', addEmployee);
-    //$(document).on('click', '#removeBtn', removeEmployee);
 }
 
-  
-let submitBtn = $('#submitBtn')
-let employees = [];
+let total = 0;
 
 function addEmployee() {
 
