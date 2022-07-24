@@ -16,13 +16,42 @@
 // ### Files Provided
 // No files have been provided (just instructions.md and a readme.md). Instead of forking and cloning this repo, please choose "Use This Template" (green button) and name your new repo "weekend-jquery-salary-calculator" and clone down from there. Make sure to commit regularily!
 
-// ### Wireframe
 
-// ![Wireframe](salary-calc-wireframe.png)
+console.log('client.js loaded')
 
-$ (readyNow);
-function readyNow(){
-  console.log('JQ');
-//   $( '#bonusButton') .on('click', bonusCalc)
-//   $()
+$(document).ready(handleReady);
+
+function handleReady(){
+    console.log('document ready!');
+    //DOM = document Object Model
+    //the dom is ready! We can interact with it
+    let employees = [];
+  
+    //click handler
+    //%('exists_now).on('click',exists_later, handleClickFn)
+    $('#submitBtn').on('click', addEmployee);
+    //$(document).on('click', '#removeBtn', removeEmployee);
+
+function addEmployee() {
+
+    let firstName = $('#firstName').val();
+    let lastName = $('#lastName').val();
+    let employeeId = $('#employeeId').val();
+    let jobTitle = $('#jobTitle').val();
+    let annualSalary = Math.round($('#annualSalary').val());
+
+    let newEmployee = {
+        firstName: firstName,
+        lastName: lastName,
+        employeeId: employeeId,
+        jobTitle: jobTitle,
+        annualSalary: annualSalary
+        }
+
+    {employees.push(newEmployee);
+        console.log(employees);
+    }
+    console.log(employees);
+}
+
 }
