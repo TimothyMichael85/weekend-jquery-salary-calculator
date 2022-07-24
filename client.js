@@ -60,14 +60,16 @@ function submit() {
         $('#monthly').empty()
         $('#monthly').append(`Total Monthly Costs: <span id="red">$${total}</span>`)
         $('#alert').empty()
+        
+    }
         if (total >= 20000) {
             $('#red').addClass("red")
         }
-    } else {
+     else {
         //Empty box alert
         $('#alert').empty()
         $('#alert').append('Error 9000: Im sorry, Dave. Im afraid I cant do that. A text box was left empty')
-    }
+    }//There's something wrong in this loop. displays both inputs AND error to DOM until addClass conditional is met. Then red class works and error disappears.  Console also shows all logs twice. Not sure if related or seprate issue...
 }
 // Create a delete button that removes an employee from the DOM. For Base mode, it does **not** need to remove that Employee's salary from the reported total.
 function deleteBtn() {
