@@ -31,24 +31,45 @@ function readyNow() {
 
 let total = 0;
 
-function addEmployee() {
+// A 'Submit' button should collect the form information, store the information to calculate monthly costs, append information to the DOM and clear the input fields. Using the stored information, calculate monthly costs and append this to the to DOM. 
+function submit() {
 
-    let firstName = $('#firstName').val();
-    let lastName = $('#lastName').val();
-    let employeeId = $('#employeeId').val();
-    let jobTitle = $('#jobTitle').val();
-    let annualSalary = Math.round($('#annualSalary').val());
+    let first = $('#firstName').val();
+    let last = $('#lastName').val();
+    let ID = $('#userId').val();
+    let job = $('#jobTitle').val();
+    let salary = $('#annualSalary').val();
+    //console.log(typeof(salary))
+    total += Math.round(Number(salary / 12) * 100) / 100;
+    console.log(total)
 
-    //create employee object => grabbing the values from inputs
-    let newEmployee = {
-        firstName: firstName,
-        lastName: lastName,
-        employeeId: employeeId,
-        jobTitle: jobTitle,
-        annualSalary: annualSalary
+    console.log('clicked')
+    if (first && last && ID && job && salary) {
+        $('#container').append(`
+            <tr>
+                <td>${first}</td>
+                <td>${last}</td>
+                <td>${ID}</td>
+                <td>${job}</td>
+                <td>${salary}</td>
+                <td><button class="delete">remove</button></td>
+            </tr>
+        `)
+        $('#firstName').val('');
+        $('#lastName').val('');
+        $('#userId').val('');
+        $('#jobTitle').val('');
+        $('#annualSalary').val('');
+        
+        $('#monthly').empty()
+        $('#monthly').append(`Total Monthly Costs: <span id="red">$${total}</span>`)
+        $('#alert').empty()
+        if (total >= 20000) {
+            $('#red').addClass("red")
+        }
+    } else {
+        //Empty box alert
+        $('#alert').empty()
+        $('#alert').append('Error 9000: Im sorry, Dave. Im afraid I cant do that. A text box was left empty')
     }
-        //push employee object to employees array => adding employee to table
-        employees.push(newEmployee);
-        console.log(employees);
-
-}
+} 
