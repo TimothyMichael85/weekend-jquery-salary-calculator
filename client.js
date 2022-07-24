@@ -73,3 +73,8 @@ function submit() {
         $('#alert').append('Error 9000: Im sorry, Dave. Im afraid I cant do that. A text box was left empty')
     }
 } 
+// Create a delete button that removes an employee from the DOM. For Base mode, it does **not** need to remove that Employee's salary from the reported total.
+function deleteBtn() {
+    $(this).closest('tr').remove();
+
+}
